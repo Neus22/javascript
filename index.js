@@ -25,7 +25,7 @@ nombreCliente=prompt(" Digite su nombre ");
 function elegirtickts(tipo ) {
        
        
-       tipo = parseInt(prompt(`ELIJA UNA OPCION\n tiquete N° :\n\n 1-primera clase \n 2-Segunda clase \n`));
+       tipo = parseInt(prompt(`ELIJA UNA OPCION\n tiquete N° :\n\n 1-Primera clase \n 2-Segunda clase \n`));
        while (tipo !=1 && tipo !=2 ){
 
        }
@@ -33,7 +33,7 @@ function elegirtickts(tipo ) {
        if(tipo==1){
               primeraClase=true;
                segundaClase=false;
-               alert("eligio priera")
+               alert("Eligio primera")
 
                contador=contador+precioPrimera
                
@@ -42,37 +42,33 @@ function elegirtickts(tipo ) {
        else if (tipo==2){
               segundaClase=true;
                primeraClase=false;
-               alert("eligio segunda")
+               alert("Eligio segunda")
                console.log(" segunda ")
                contador=contador+precioSegunda
        }
        
-   }
+}
 
 
 
-   saludar(nombreCliente);
-   let cantidad=parseInt(prompt(" cuantos tickes desea comprar"));
-   alert(`Precios :\n\n 1-primera clase; ${precioPrimera}  \n 2-Segunda clase; ${precioSegunda} \n`)
-   for( let i=0; i<cantidad;i++){
-       
-
+saludar(nombreCliente);
+   let cantidad=parseInt(prompt(" Cuantos tiquetes desea comprar"));
+   alert(`Precios :\n\n 1-Primera clase; ${precioPrimera}  \n 2-Segunda clase; ${precioSegunda} \n`)
+   for( let i=0; i<cantidad;i++){   
        
        elegirtickts();
+}
 
+ alert(`El total de sus tiquetes serian \n$ ${contador} (dolares )`)
+ 
+let pagoCliente=parseFloat(prompt(" Con que valor desea pagar moneda dolares"));
 
-   }
+while(pagoCliente<contador){
+       alert("El valor debe ser mayor al precio de lso tiquetes ")
+       pagoCliente=parseFloat(prompt(" Con que valor desea pagar moneda dolares"));   
 
-   alert(`el total de sus tiquetes serian \n$ ${contador} (dolares )`)
-   
-   let pagoCliente=parseFloat(prompt(" con que valor desea pagar moneda dolares"));
+}
 
-   while(pagoCliente<contador){
-       alert("el valor debe ser mayor al precio de lso tiquetes ")
-       pagoCliente=parseFloat(prompt(" con que valor desea pagar moneda dolares"));
+let cambio= pagoCliente-contador;
 
-   }
-
-   let cambio= pagoCliente-contador;
-
-   alert(`su cambio es ${cambio} gracias por elegirAirport`)
+alert(`Su cambio es ${cambio} gracias por elegirAirport`)
